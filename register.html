@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro Estilo KOAJ</title>
+  <style>
+    
+    * { box-sizing: border-box; margin:0; padding:0; font-family: Arial, sans-serif; }
+    html, body { height:100%; width:100%; }
+
+    
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+   
+    .left {
+      flex: 1;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .form-wrapper {
+      width: 360px;
+      border: 1px solid #ccc;
+      padding: 1.5rem;
+    }
+    .form-wrapper h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .form-group, .form-group-title {
+      margin-bottom: 1rem;
+    }
+    .form-group-title label {
+      margin-right: 1rem;
+      font-size: 0.9rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .date-row {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .date-row select {
+      flex: 1;
+    }
+    .btn-continue {
+      width: 100%;
+      padding: 0.7rem;
+      background: #00b28a;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    
+    .right {
+      flex: 1;
+      overflow: hidden;              
+      position: relative;
+    }
+    .right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;             
+      display: block;                
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="left">
+      <div class="form-wrapper">
+        <h2>SUS DATOS PERSONALES</h2>
+        <div class="form-group-title">
+          <label>Título</label>
+          <label><input type="radio" name="titulo" value="Sr."> Sr.</label>
+          <label><input type="radio" name="titulo" value="Sra."> Sra.</label>
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido *</label>
+          <input type="text" id="apellido" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña *</label>
+          <input type="password" id="password" required>
+        </div>
+        <div class="form-group">
+          <label for="password2">Repetir contraseña *</label>
+          <input type="password" id="password2" required>
+        </div>
+        <div class="form-group">
+          <label for="tipo-doc">Tipo de documento</label>
+          <select id="tipo-doc">
+            <option value="">Seleccionar</option>
+            <option value="cc">Cédula de Ciudadanía</option>
+            <option value="ti">Tarjeta de Identidad</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="num-doc">Nº de identificación *</label>
+          <input type="text" id="num-doc" required>
+        </div>
+        <div class="form-group">
+          <label>Fecha de nacimiento</label>
+          <div class="date-row">
+            <select id="dia"><option value="">Día</option></select>
+            <select id="mes"><option value="">Mes</option></select>
+            <select id="anio"><option value="">Año</option></select>
+          </div>
+        </div>
+        <button class="btn-continue">CONTINUAR</button>
+      </div>
+    </div>
+
+   
+    <div class="right">
+      <img src="img/ChatGPT Imagen Abr 20 2025 Implementar Login Web.png" alt="Local de tienda">
+    </div>
+  </div>
+
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dia = document.getElementById('dia');
+      for (let i = 1; i <= 31; i++) {
+        const o = document.createElement('option');
+        o.value = i; o.textContent = i; dia.appendChild(o);
+      }
+      const mes = document.getElementById('mes'),
+            meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+      meses.forEach((m,i) => {
+        const o = document.createElement('option');
+        o.value = i+1; o.textContent = m; mes.appendChild(o);
+      });
+      const anio = document.getElementById('anio'),
+            hoy = new Date().getFullYear();
+      for (let y = hoy; y >= 1900; y--) {
+        const o = document.createElement('option');
+        o.value = y; o.textContent = y; anio.appendChild(o);
+      }
+    });
+  </script>
+
+</body>
+</html>

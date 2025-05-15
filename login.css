@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #ada705 0%, #080808 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/local1.png);
+    
+  }
+  .main-container {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    height: 600px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  .image-side {
+    width: 50%;
+    background-color: #272a31;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    
+  }
+  
+  .image-side img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .user-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-icon img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid #1d1e202c;
+    background-color: white;
+    padding: 5px;
+  }
+  
+  .login-side {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .login-container {
+    width: 80%;
+    text-align: center;
+  }
+  
+  .login-container h2 {
+    margin-bottom: 25px;
+    color: #333;
+  }
+  
+  .login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+   .btn-google {
+      width: 100%; padding: 0.6rem; border: 2px solid #000;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: bold; background: transparent; cursor: pointer;
+      margin-bottom: 1rem;
+    }
+    .btn-google img { width: 20px; margin-right: 8px; }
+    .form-wrapper p { text-align: center; margin-bottom: 1rem; color: #555; }
+    .form-wrapper label { display: block; margin: 0.5rem 0 0.2rem; color: #333; }
+    .form-wrapper input {
+      width: 100%; padding: 0.5rem; margin-bottom: 1rem;
+      border: 1px solid #ccc; border-radius: 4px;
+    }
+    .form-wrapper a.forgot {
+      display: block; margin-bottom: 1rem; text-decoration: none; color: #000;
+      font-size: 0.9rem;
+    }
+    .form-wrapper .btn-login {
+      width: 100%; padding: 0.6rem; background: #000; color: #fff;
+      border: none; font-weight: bold; cursor: pointer;
+      margin-bottom: 1rem;
+    }
